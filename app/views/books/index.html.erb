@@ -7,8 +7,12 @@
     <h3>Author: <%= book.author %></h3>
     <div class="button">
     <a href="/books/<%= book.id %>" class="btn">
-      Details >
+      Show >
     </a>
+    <%= link_to "Edit", edit_book_path(book.id) %>
+    <%= link_to 'Destroy', delete_book_path(book),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
   </div>
   </div>
   <% end %>
