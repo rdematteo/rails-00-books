@@ -9,10 +9,15 @@
     <a href="/books/<%= book.id %>" class="btn">
       Show >
     </a>
-    <%= link_to "Edit", edit_book_path(book.id) %>
-    <%= link_to 'Destroy', delete_book_path(book),
+    <!-- <a href="/<%= edit_book_path(book.id) %>" > 
+    <i class="fas fa-edit" style="font-size:48px" href="#"></i></a> -->
+    <span class="btn" ><%= link_to image_tag("../../../app/assets/images/edit-solid.svga"), edit_book_path(book.id) %></span>
+
+
+    <span class="btn" ><%= link_to "Edit", edit_book_path(book.id) %></span>
+    <span class="btn"><%= link_to 'Destroy', delete_book_path(book),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %>
+              data: { confirm: 'Are you sure?' } %></span>
   </div>
   </div>
   <% end %>
